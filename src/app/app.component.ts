@@ -7,7 +7,7 @@ import {RetailserviceService} from './retailservice.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Details';
+  // title = 'Details';
   apiData: any;
   retailer_id: string
 

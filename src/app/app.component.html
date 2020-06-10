@@ -1,89 +1,62 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  
+  <!--
   <h1>
     Retailer {{ title }}
-  </h1>
+  </h1>-->
+
+<!--
 <nav class="navbar navbar-light bg-light" >
   <a class="navbar-brand">Retailer Details</a>
+</nav>-->
+<div class="blacknav">
+
+
+<div class="muna">
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <label for="id">Retailer ID : </label>
+    <input class="form-control mr-sm-2" type="text" [(ngModel)]="retailer_id" name="ret_id" min="1" max="6">
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="getRetailData()" type="submit">Click Details</button>
+  </form>
 </nav>
-<form>
+</div>
+
+
+<!--<form>
   <label for="id">Retailer ID : </label>
   <input type="text" [(ngModel)]="retailer_id" name="ret_id" min="1" max="6">
-
   <input type="button" class="btn btn-primary mb-2" (click)="getRetailData()" value="Click Details" >
+</form>-->
   
-</form>
-  <table border=1>
-
+  
+<table border=1 id="tab1">
 <tbody  *ngIf="apiData && apiData.payload"> 
   <tr>
     <th>Business Mobile Number</th>
-
-    
+    <th>Creation Date</th>
+    <th>Distributor ID</th>
+    <th>Mobile Number</th>
+    <th>Retailer Name</th>
+    <th>Retailer Address</th>
+    <th>Retailer ID</th>
+    <th>Retailer State</th>
   </tr>
 	<tr *ngFor="let item of  this.apiData.payload" >
 		<td>{{item.business_mobile_no}}</td>
     <td>{{item.creation_date}}</td>
     <td>{{item.distributor_id}}</td>
     <td>{{item.mobile_number}}</td>
-    <td>{{item.ret_nameret_name}}</td>
+    <td>{{item.ret_name}}</td>
     <td>{{item.retailer_address}}</td>
     <td>{{item.retailer_id}}</td>
-    <td>{{item.retailer_states}}</td>
+    <td>{{item.retailer_state}}</td>
 	</tr>
 
 	</tbody>
 </table>
-
-
-
-
-
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Business Mobile Number</th>
-      <th scope="col">First</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Creation Date</th>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">Distributor ID</th>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th scope="row">Mobile Number</th>
-      <td>Jacob</td>
-    </tr><tr>
-      <th scope="row">Retailer Name</th>
-      <td>Jacob</td>
-    </tr><tr>
-      <th scope="row">Retailer Address</th>
-      <td>Jacob</td>
-    </tr><tr>
-      <th scope="row">Retailer ID</th>
-      <td>Jacob</td>
-    </tr><tr>
-      <th scope="row">Retailer State</th>
-      <td>Jacob</td>
-    </tr>
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
+</div>
 </div>
 
 <router-outlet></router-outlet>
