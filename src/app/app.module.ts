@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MultiformComponent } from './multiplefo/multiform/multiform.component';
+import { LoginComponent } from './login/login/login.component';
+// import { MultiformComponent } from './multiplefo/multiform/multiform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MultiformComponent
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,

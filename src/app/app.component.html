@@ -16,9 +16,11 @@
 <div class="muna">
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
-    <label for="id">Retailer ID : </label>
-    <input class="form-control mr-sm-2" type="text" [(ngModel)]="retailer_id" name="ret_id" min="1" max="6">
-    <button class="btn btn-outline-success my-2 my-sm-0" (click)="getRetailData()" type="submit">Click Details</button>
+    <label for="id">Enter Retailer ID : </label>
+    <input class="form-control mr-sm-2" type="text" [(ngModel)]="retailer_id" name="ret_id" min="1" max="6" pattern="/^[0-9]{6}$/">
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="getRetailData()" type="submit">Get Details</button>
+    <button id='edit' class="btn btn-outline-success my-2 my-sm-0" (click)="resetdata()" type="button">Clear</button>
+  
   </form>
 </nav>
 </div>
@@ -31,32 +33,39 @@
 </form>-->
   
   
-<table border=1 id="tab1">
+<table border=1 id="tab1" class="rettab">
 <tbody  *ngIf="apiData && apiData.payload"> 
-  <tr>
-    <th>Business Mobile Number</th>
-    <th>Creation Date</th>
+  <tr class="tradd">
     <th>Distributor ID</th>
-    <th>Mobile Number</th>
-    <th>Retailer Name</th>
-    <th>Retailer Address</th>
     <th>Retailer ID</th>
+    <th>Creation Date</th>
+    <th>Retailer Name</th>
+    <th>Mobile Number</th>
+    <th>Business Mobile Number</th>
     <th>Retailer State</th>
+    <th>Retailer Address</th>
   </tr>
-	<tr *ngFor="let item of  this.apiData.payload" >
-		<td>{{item.business_mobile_no}}</td>
-    <td>{{item.creation_date}}</td>
+	<tr *ngFor="let item of  this.newArr" >
     <td>{{item.distributor_id}}</td>
-    <td>{{item.mobile_number}}</td>
-    <td>{{item.ret_name}}</td>
-    <td>{{item.retailer_address}}</td>
     <td>{{item.retailer_id}}</td>
+    <td>{{item.creation_date}}</td>
+    <td>{{item.ret_name}}</td>
+    <td>{{item.mobile_number}}</td>
+		<td>{{item.business_mobile_no}}</td>
     <td>{{item.retailer_state}}</td>
+    <td>{{item.retailer_address}}</td>
+    <span class="glyphicon glyphicon-trash"></span>
+    
 	</tr>
 
 	</tbody>
+  
 </table>
 </div>
 </div>
+
+
+
+<app-login></app-login>
 
 <router-outlet></router-outlet>

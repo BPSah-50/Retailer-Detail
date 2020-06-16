@@ -55,7 +55,7 @@ export class RetailserviceService {
 
     var obj ={};
 
-    return this.http.get("http://127.0.0.1:5000/data",{params}).pipe(map(res => { 
+    return this.http.get("http://13.233.28.190/data",{params}).pipe(map(res => { 
     
       retry(1),
 

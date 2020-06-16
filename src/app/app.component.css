@@ -1,3 +1,4 @@
+
 h1{
     color: mediumblue;
     text-decoration: underline;
@@ -10,13 +11,33 @@ h1{
 label{
     font-size: 22px;
 }
+#edit{
+    margin-left: .5em;
+}
 .bg-light{
-    background-color: #eaecef!important;
+    background-color: #c1c6ce00!important;
 }
 .navbar {
     margin: 10px 50px 10px 50px;
-    padding-left: 30%;
+    padding-left: 24%;
 }
 #tab1{
-    margin: 10px 50px 10px 50px;
+    margin: 10px 90px 10px 90px;
+ 
+}
+.btn{
+    background-color: #28a745;
+    color: whitesmoke;
+}
+.btn-outline-success:hover{
+    background-color: rgb(27, 84, 190);
+}
+.rettab{
+    background-color: white;
+    
+}
+.tradd{
+    white-space: nowrap;
+    background-color:#88828252;
+    font-size: medium;
 }
